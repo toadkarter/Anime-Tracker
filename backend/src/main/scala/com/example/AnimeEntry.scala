@@ -3,8 +3,6 @@ package com.example
 import java.time._
 import java.time.format.DateTimeFormatter
 import scala.collection.mutable
-import org.json4s._
-import org.json4s.native.Json
 
 case class AnimeEntry(id: String,
                       title: String,
