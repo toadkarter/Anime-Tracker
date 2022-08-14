@@ -6,7 +6,7 @@ interface Props {
   setUserName: Dispatch<SetStateAction<string>>;
 }
 
-//
+
 // Animation Bug Fix Credit:
 // https://stackoverflow.com/questions/55647969/how-to-get-one-elements-to-slide-in-while-the-other-slides-out-using-react-and
 

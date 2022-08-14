@@ -14,7 +14,7 @@ object AnimeUsers {
   def addAnimeUser(user: String): String = {
     val newUser = Api.getAnimeUser(user)
     if (animeUsers.contains(user)) {
-      compareNewUserInfo(newUser)
+      Json(DefaultFormats).write(animeUsers(selectedUser.get).userAnime)
     } else {
       animeUsers(newUser.userName) = newUser
       selectedUser = Some(newUser.userName)
