@@ -6,7 +6,7 @@ type AnimeEntry = {
   imageUrl: string;
   startDate: string;
   numEpisodes: number;
-  episodesWatched: {date: string, episodes: AnimeEpisode[]}
+  episodesWatched: {[date: string]: AnimeEpisode[]}
 }
 
 export default AnimeEntry;
