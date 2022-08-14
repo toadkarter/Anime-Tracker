@@ -1,29 +1,36 @@
-import {Dispatch, SetStateAction} from "react";
+import React, {Dispatch, SetStateAction, useState} from "react";
 import {Button, TextField} from "@mui/material";
 
 interface Props {
-  userName: string;
-  setUserName: Dispatch<SetStateAction<string>>;
+  userName: string | undefined;
+  setUserName: Dispatch<SetStateAction<string | undefined>>;
 }
 
-
-// Animation Bug Fix Credit:
-// https://stackoverflow.com/questions/55647969/how-to-get-one-elements-to-slide-in-while-the-other-slides-out-using-react-and
-
 const UserInput = ({userName, setUserName}: Props): JSX.Element => {
+  const [currentInput, setCurrentInput] = useState<string>("")
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setUserName(currentInput);
+  }
+
   return <div>
-    <TextField
-      id="outlined-basic"
-      label="Outlined"
-      variant="outlined"
-      defaultValue={userName}
-    />
-    <Button
-      onClick={() => setUserName}
-    >
-
-    </Button>
-
+    <form onSubmit={handleSubmit}>
+      <TextField
+        id="outlined-basic"
+        label="Username"
+        variant="outlined"
+        defaultValue={userName}
+        onChange={(e) => setCurrentInput(e.target.value)}
+      />
+      <Button
+        type={'submit'}
+        variant={'outlined'}
+        onClick={() => console.log()}
+      >
+        Submit
+      </Button>
+    </form>
   </div>
 };
 
