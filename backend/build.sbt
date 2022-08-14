@@ -50,5 +50,7 @@ libraryDependencies ++= Seq(
   "io.circe" %% "circe-optics"
 ).map(_ % circeVersion)
 
+libraryDependencies += "ch.megard" %% "akka-http-cors" % "1.1.3"
+
 Compile / mainClass := Some("com.example.Main")
 
