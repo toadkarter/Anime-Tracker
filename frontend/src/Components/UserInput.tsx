@@ -1,5 +1,5 @@
 import React, {Dispatch, SetStateAction, useState} from "react";
-import {Button, TextField} from "@mui/material";
+import {Box, Button, TextField, Typography} from "@mui/material";
 
 interface Props {
   userName: string | undefined;
@@ -16,20 +16,42 @@ const UserInput = ({userName, setUserName}: Props): JSX.Element => {
 
   return <div>
     <form onSubmit={handleSubmit}>
-      <TextField
-        id="outlined-basic"
-        label="Username"
-        variant="outlined"
-        defaultValue={userName}
-        onChange={(e) => setCurrentInput(e.target.value)}
-      />
-      <Button
-        type={'submit'}
-        variant={'outlined'}
-        onClick={() => console.log()}
+      <Box
+        display={'flex'}
+        flexDirection={'column'}
+        justifyContent={'center'}
+        m={2}
       >
-        Submit
-      </Button>
+        <Box
+          display={'flex'}
+          flexDirection={'row'}
+          justifyContent={'center'}
+          flexWrap={'wrap'}
+        >
+          <TextField
+            id="outlined-basic"
+            InputLabelProps={{
+
+            }}
+            InputProps={{
+              inputProps: {
+                style: {textAlign: 'center'},
+              }
+            }}
+            label="Username"
+            variant="outlined"
+            defaultValue={userName}
+            onChange={(e) => setCurrentInput(e.target.value)}
+          />
+          <Button
+            type={'submit'}
+            variant={'outlined'}
+            onClick={() => console.log()}
+          >
+            Submit
+          </Button>
+        </Box>
+      </Box>
     </form>
   </div>
 };

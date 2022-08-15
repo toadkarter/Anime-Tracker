@@ -5,7 +5,6 @@ import AnimeEntries from "./types/AnimeEntries";
 import UserInput from "./Components/UserInput";
 import Timetable from "./types/Timetable";
 import DayContainer from "./Components/DayContainer";
-import {Box} from "@mui/material";
 
 const App = () => {
   const [selectedUser, setSelectedUser] = useState<string | undefined>();
@@ -14,7 +13,7 @@ const App = () => {
 
   useEffect(() => {
       const fetchSelectedUser = () => {
-        fetch(`http://127.0.0.1:8080/user?user_name=${selectedUser}`)
+        fetch(`http://localhost:8080/user?user_name=${selectedUser}`)
           .then((response) => {
             if (response.ok) {
               return response.json() as Promise<AnimeEntries>;
@@ -29,7 +28,7 @@ const App = () => {
       }
 
       const fetchTimetable = () => {
-        fetch("http://127.0.0.1:8080/episodes")
+        fetch("http://localhost:8080/episodes")
           .then((response) => {
             if (response.ok) {
               return response.json() as Promise<Timetable>;
@@ -61,12 +60,13 @@ const App = () => {
           <DayContainer date={date} animeEntries={currentAnimeEntries}/>
         </>
       })
+
   }
 
   return (
     <div className="App">
       <UserInput userName={selectedUser} setUserName={setSelectedUser}/>
-        {showAnimeIds()}
+      {showAnimeIds()}
     </div>
   );
 }
