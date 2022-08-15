@@ -1,7 +1,7 @@
 # Anime Tracker
 ![Scala](https://img.shields.io/badge/scala-%23DC322F.svg?style=for-the-badge&logo=scala&logoColor=white)
 
-Anime Tracker is a basic API wrapper written in Scala for the official MyAnimeList API, the link to which [can be found here](https://myanimelist.net/apiconfig/references/api/v2).
+Anime Tracker is a basic API wrapper written in Scala for the official MyAnimeList API. The link to the official API [can be found here](https://myanimelist.net/apiconfig/references/api/v2).
 
 It is intended to be used as code for a fully fledged web application. A very basic example of such an application has been provided to demo how Anime Tracker can be incorporated into your project. 
 
