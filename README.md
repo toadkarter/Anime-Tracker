@@ -21,7 +21,7 @@ Once submitted, Anime Tracker will select all shows the user currently has set a
 
 A JSON object will be returned containing all of this information, as well as some additional userful information like such as links to the show poster. 
 
-The user information will also be cached in the backend to make sure that any subsequen requests are significantly faster. 
+The user information will also be cached in the backend to make sure that any subsequent requests are significantly faster. 
 
 ### **2. Episodes Endpoint**
 
